@@ -1,0 +1,38 @@
+//
+//  ToogleBootcamp.swift
+//  SwiftLearn
+//
+//  Created by Ömer Tarık Şener on 6.02.2026.
+//
+
+import SwiftUI
+
+struct ToogleBootcamp: View {
+    
+    @State var toggleIsOn: Bool = false
+    
+    var body: some View {
+        VStack {
+            
+            HStack{
+                Text("Status")
+                Text(toggleIsOn ? "Online" : "Offline")
+            }
+            .font(.title)
+            
+            Toggle(
+                isOn: $toggleIsOn,
+                label:{
+                Text("Changes Status")
+                })
+            .toggleStyle(SwitchToggleStyle(tint: Color.blue))
+            
+            Spacer()
+        }
+        .padding(.horizontal, 100)
+    }
+}
+
+#Preview {
+    ToogleBootcamp()
+}
